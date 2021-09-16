@@ -31,7 +31,7 @@ void Plotter::paintEvent(QPaintEvent *event)
     brush.setStyle(Qt::SolidPattern);
 
     pen.setColor(QColor(0,0,0));
-    pen.setWidth(2);
+    pen.setWidth(1);
     painter.setBrush(brush);
     painter.setPen(pen);
 
@@ -66,23 +66,28 @@ void Plotter::paintEvent(QPaintEvent *event)
 
 void Plotter::mouseMoveEvent(QMouseEvent *event)
 {
-    emit mudouX(event->x());
+    emit mudouX(event->x()); //emite posição em px que mouse se encontra
     emit mudouY(event->y());
 
-    emit posX((event->x())/largura);
+    emit posX((event->x())/largura); //emite posição no voxel que o mouse se encontra
     emit posY((event->y())/altura);
 
     int x1 = (event->x())/largura;
     int y1 = (event->y())/altura;
 
-    PaintPlane(x1,y1,z_atual);
-    std:: cout << "Paint Plane called"<< std::endl;
+    if(event->buttons() & Qt::LeftButton){
 
-    repaint();
 
-//    if(event->button() == Qt::LeftButton){ ;
+        PaintPlane(x1,y1,z_atual);
+        std:: cout << "Paint Plane called"<< std::endl;
 
-//    }
+        repaint();
+
+        }
+    if(event->buttons() == Qt::RightButton){ ;
+        ErasedPlane(x1,y1,z_atual);
+        std:: cout << "erased Plane called"<< std::endl;
+    }
 }
 
 void Plotter::PaintPlane(int x, int y, int z)
@@ -92,6 +97,14 @@ void Plotter::PaintPlane(int x, int y, int z)
     std::cout << r << std :: endl;
 
     s->putVoxel(x,y,z);
+
+
+}
+
+void Plotter::ErasedPlane(int x, int y, int z)
+{
+    s->cutVoxel(x,y,z);
+    std::cout << "voxel apagado" << std :: endl;
     repaint();
 
 }
@@ -101,6 +114,46 @@ void Plotter::slideR(int r)
     this->r = r;
 
 }
+
+void Plotter::slideG(int g)
+{
+    this->g = g;
+}
+
+void Plotter::slideB(int b)
+{
+    this->b = b;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //vector<vector<Voxel> > Plotter::PaintPlane(int x, int y)
 //{

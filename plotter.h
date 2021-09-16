@@ -18,7 +18,7 @@ public:
     int y = 10;
     int z = 10;
     int z_atual = 0;
-    bool click;
+    //bool click;
     int r,g,b;
 
 
@@ -34,16 +34,20 @@ public:
     explicit Plotter(QWidget *parent = nullptr);
     void paintEvent(QPaintEvent *event);
     void mouseMoveEvent(QMouseEvent *event);
+    void PaintPlane(int x, int y, int z);
+    void ErasedPlane(int x, int y, int z);
+
+
 //    void mouseReleaseEvent(QMouseEvent *event);
 //    void mousePressEvent(QMouseEvent *event);
 
 
-    void PaintPlane(int x, int y, int z);
+
 
 public slots:
     void slideR(int r);
-    //void slideG(int g);
-    //void slideB(int b);
+    void slideG(int g);
+    void slideB(int b);
 
 
 

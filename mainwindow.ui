@@ -298,6 +298,8 @@
    <slots>
     <slot>paintEvent()</slot>
     <slot>slideR(int)</slot>
+    <slot>slideG(int)</slot>
+    <slot>slideB(int)</slot>
    </slots>
   </customwidget>
  </customwidgets>
@@ -326,12 +328,12 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>153</x>
-     <y>267</y>
+     <x>113</x>
+     <y>157</y>
     </hint>
     <hint type="destinationlabel">
-     <x>291</x>
-     <y>274</y>
+     <x>251</x>
+     <y>164</y>
     </hint>
    </hints>
   </connection>
@@ -342,12 +344,12 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>160</x>
-     <y>306</y>
+     <x>120</x>
+     <y>196</y>
     </hint>
     <hint type="destinationlabel">
-     <x>299</x>
-     <y>311</y>
+     <x>259</x>
+     <y>201</y>
     </hint>
    </hints>
   </connection>
@@ -358,12 +360,12 @@
    <slot>display(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>202</x>
-     <y>343</y>
+     <x>162</x>
+     <y>233</y>
     </hint>
     <hint type="destinationlabel">
-     <x>286</x>
-     <y>344</y>
+     <x>246</x>
+     <y>234</y>
     </hint>
    </hints>
   </connection>
@@ -374,12 +376,44 @@
    <slot>slideR(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>161</x>
-     <y>270</y>
+     <x>121</x>
+     <y>160</y>
     </hint>
     <hint type="destinationlabel">
      <x>507</x>
      <y>203</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>widget</receiver>
+   <slot>slideG(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>91</x>
+     <y>193</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>487</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_3</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>widget</receiver>
+   <slot>slideB(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>98</x>
+     <y>233</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>477</x>
+     <y>250</y>
     </hint>
    </hints>
   </connection>
