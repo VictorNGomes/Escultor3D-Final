@@ -9,7 +9,7 @@ struct Voxel {
   };
 
 class Sculptor {
-protected:
+private:
   Voxel ***v;
   int nx,ny,nz;
   float r,g,b,a;
@@ -36,7 +36,7 @@ public:
   int getColorR();
   int getColorG();
   int getColorB();
-
+  void setVoxel();
 };
 
 #endif

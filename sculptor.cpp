@@ -304,6 +304,11 @@ int Sculptor::getColorB()
     return this->b*255;
 }
 
+void Sculptor::setVoxel()
+{
+
+}
+
 
 
 

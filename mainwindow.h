@@ -22,6 +22,9 @@ private slots:
     void on_pushButton_clicked();
 
     void on_button_putvoxel_clicked();
+public slots:
+    void close();
+
 
 private:
     Ui::MainWindow *ui;

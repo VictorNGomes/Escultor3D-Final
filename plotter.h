@@ -48,6 +48,8 @@ public slots:
     void slideR(int r);
     void slideG(int g);
     void slideB(int b);
+    void slideZ(int dimz);
+    void salvar();
 
 
 

@@ -94,6 +94,8 @@ void Plotter::PaintPlane(int x, int y, int z)
 {
     s->setColor((r/255.0),(g/255.0),(b/255.0),1);
 
+
+
     std::cout << r << std :: endl;
 
     s->putVoxel(x,y,z);
@@ -123,6 +125,18 @@ void Plotter::slideG(int g)
 void Plotter::slideB(int b)
 {
     this->b = b;
+}
+
+void Plotter::slideZ(int dimz)
+{
+    this->z_atual = dimz;
+    repaint();
+}
+
+void Plotter::salvar()
+{
+    s->writeOFF("scultura.off");
+    std::cout << "arquivo salvo"<< std::endl;
 }
 
 

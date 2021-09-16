@@ -40,6 +40,8 @@ void MainWindow::on_pushButton_clicked() //botão que cria nova scultura
     ui->widget->y = tamY;
     ui->widget->z = tamZ;
 
+    ui->verticalSlider->setMaximum(tamZ);
+
     delete ui->widget->s;
     ui->widget->s = new Sculptor(tamX,tamY,tamZ);
     ui->widget->repaint();
@@ -60,4 +62,15 @@ void MainWindow::on_button_putvoxel_clicked()
 {
 
 }
+
+void MainWindow::close()
+{
+    exit(0);
+}
+
+//void MainWindow::save()
+//{
+//    ui->widget->s->writeOFF("scultura.off");
+//    std::cout << "arquivo salvo"<< std::endl;
+//}
 
