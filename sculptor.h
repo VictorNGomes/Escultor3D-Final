@@ -5,7 +5,7 @@
 struct Voxel {
     float r,g,b;
     float a;
-    bool isOn;
+    bool isOn = false;
   };
 
 class Sculptor {
@@ -32,6 +32,10 @@ public:
   int getX();
   int getY();
   int getZ();
+  bool VoxelIsOn(int dx,int dy,int dz);
+  int getColorR();
+  int getColorG();
+  int getColorB();
 
 };
 

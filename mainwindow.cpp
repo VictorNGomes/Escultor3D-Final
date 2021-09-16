@@ -12,7 +12,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-
+    connect(ui->widget, SIGNAL(posX(int)), ui->lcdNumberX, SLOT(display(int)));
+    connect(ui->widget, SIGNAL(posY(int)), ui->lcdNumberY, SLOT(display(int)));
 
 
 }
@@ -39,7 +40,10 @@ void MainWindow::on_pushButton_clicked() //botão que cria nova scultura
     ui->widget->y = tamY;
     ui->widget->z = tamZ;
 
+    delete ui->widget->s;
+    ui->widget->s = new Sculptor(tamX,tamY,tamZ);
     ui->widget->repaint();
+
 
 
     std::cout << tamX << " " <<tamY << " " <<tamZ << " "<< std::endl;

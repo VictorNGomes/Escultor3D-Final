@@ -282,6 +282,30 @@ int Sculptor::getZ()
     return this->nz;
 }
 
+bool Sculptor::VoxelIsOn(int dx, int dy, int dz)
+{
+    if(v[dx][dy][dz].isOn){
+        return true;
+    }
+}
+
+int Sculptor::getColorR()
+{
+    return this->r*255;
+}
+
+int Sculptor::getColorG()
+{
+    return this->g*255;
+}
+
+int Sculptor::getColorB()
+{
+    return this->b*255;
+}
+
+
+
 
 
 
